@@ -1,0 +1,36 @@
+{
+  "name": "TrialProject",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7.9.2",
+    "@sap/cds-hana": "^2",
+    "@sap/hana-client": "^2.20.23",
+    "express": "^4.19.2",
+    "hdb": "^0.19.8",
+    "@sap/xssec": "^4.0.3",
+    "passport": "0.7.0"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
+    "@sap/eslint-plugin-cds": "^3",
+    "@sap/hdi-deploy": "4.9.5",
+    "eslint": "^9"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "db": "hana",
+      "auth": "xsuaa"
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
+    }
+  }
+}

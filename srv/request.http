@@ -1,0 +1,83 @@
+GET http://localhost:4004/odata/v4/catalog/$metadata HTTP/1.1
+
+###
+GET http://localhost:4004/MyService/Projects HTTP/1.1
+
+###
+POST http://localhost:4004/odata/v4/catalog/Books HTTP/1.1
+Content-Type: application/json
+
+{
+      "ID": 4,
+      "title": "Book Theif",
+      "stock": 500
+    }
+
+###
+PATCH http://localhost:4004/odata/v4/catalog/Books(ID=3) HTTP/1.1
+Content-Type: application/json
+
+{
+      "title": "KiteRunner",
+      "stock": 300
+    }
+
+###
+GET http://localhost:4004/MyService/Projects HTTP/1.1
+
+
+###
+PATCH http://localhost:4004/odata/v4/project/Users(id=1000) HTTP/1.1
+Content-Type: application/json
+
+{
+      "phone": "1234567"
+    }
+###
+POST http://localhost:4004/MyService/Projects HTTP/1.1
+Content-Type: application/json
+
+{
+      "id": 2,
+      "name": "abcd",
+      "description": "alphabets1243"
+    }
+    
+###
+POST http://localhost:4004/browse1/Products HTTP/1.1
+Content-Type: application/json
+
+{
+      "productID": "3000",
+      "productName": "Poduct3",
+      "supplierCompanyName": "SupplierCompany",
+      "supplierAddress_city": "City",
+      "supplierAddress_street": "Street",
+      "supplierAddress_streetNumber": 2345,
+      "responsibleEmployeeName": "Test1",
+      "responsibleEmployeeAddress_city": "empcity",
+      "responsibleEmployeeAddress_street": "empstreet",
+      "responsibleEmployeeAddress_streetNumber": 34567,
+      "deliveryCustomerName": "devcustname",
+      "deliverCustomerAddress_city": "devcustcity",
+      "deliverCustomerAddress_street": "devcuststreet",
+      "deliverCustomerAddress_streetNumber": 4567
+    }
+
+###
+GET http://localhost:4004/browse1/Products HTTP/1.1
+
+###
+Get http://localhost:4004/catalog/SalesOrders
+
+###
+Get http://localhost:4004/catalog/SalesOrders(1)
+
+###
+POST http://localhost:4004/odata/v4/catalog/SalesOrders HTTP/1.1
+Content-Type: application/json
+
+{
+    "description": "Order4",
+    "customerNo": "C1"
+}
